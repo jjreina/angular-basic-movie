@@ -1,4 +1,6 @@
-const moviesMock: any[] = [
+import { Movie } from '../../interfaces/movie.interface';
+
+export const moviesMock: Movie[] = [
   {
     id: 'tt9603212',
     qid: 'movie',
