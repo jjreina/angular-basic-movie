@@ -1,4 +1,4 @@
-import { Movie } from '../../interfaces/movie.interface';
+import { Movie } from '../../movies/interfaces/movie.interface';
 
 export const moviesMock: Movie[] = [
   {

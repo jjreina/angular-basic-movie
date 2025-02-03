@@ -1,0 +1,5 @@
+<div class="container-movies">
+  @for (movie of this.movies; track movie.id) {
+    <movies-components-movie [movie]="movie"></movies-components-movie>
+  }
+</div>
