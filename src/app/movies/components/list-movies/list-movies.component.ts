@@ -11,4 +11,10 @@ import { Movie } from '../../interfaces/movie.interface';
 export class ListMoviesComponent {
   @Input()
   public movies: Movie[] = [];
+
+  public titleMovieSelected: string = '';
+
+  public showTitleMovieSelected(title: string): void {
+    this.titleMovieSelected = title;
+  }
 }

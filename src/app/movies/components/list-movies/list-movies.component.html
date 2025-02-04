@@ -1,5 +1,10 @@
+<h3>Selected Movie: {{ titleMovieSelected }}</h3>
+<hr />
 <div class="container-movies">
   @for (movie of this.movies; track movie.id) {
-    <movies-components-movie [movie]="movie"></movies-components-movie>
+    <movies-components-movie
+      [movie]="movie"
+      (movieTitleEventEmitter)="showTitleMovieSelected($event)"
+    ></movies-components-movie>
   }
 </div>
