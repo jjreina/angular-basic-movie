@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Movie } from '../interfaces/movie.interface';
-import { moviesMock } from '../../data/mocks/mockDataMovies';
+import { MoviesService } from '../services/movies.service';
 
 @Component({
   selector: 'movies-main-page-component',
   templateUrl: 'main-page.component.html',
   standalone: false,
 })
-export class MainPageComponent {
-  constructor() {}
+export class MainPageComponent implements OnInit {
+  public movies: Movie[] = [];
 
-  public movies: Movie[] = moviesMock;
+  constructor(private moviesService: MoviesService) {}
+
+  ngOnInit(): void {
+    this.movies = this.moviesService.getMovies();
+  }
 }
