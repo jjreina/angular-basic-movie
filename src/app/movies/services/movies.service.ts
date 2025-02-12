@@ -1,17 +1,14 @@
 import { Injectable } from '@angular/core';
 import { moviesMock } from '../../data/mocks/mockDataMovies';
-import { Movie, MovieResponse } from '../interfaces/movie.interface';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
+import { Movie } from '../interfaces/movie.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MoviesService {
-  private readonly url: string = 'http://localhost:3000/response';
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
-  public getMoviesFromApi(): Observable<MovieResponse> {
-    return this.http.get<MovieResponse>(this.url);
+  public getMovies(): Movie[] {
+    return moviesMock;
   }
 }
