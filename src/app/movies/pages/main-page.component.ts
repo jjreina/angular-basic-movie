@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from '../interfaces/movie.interface';
+import { Movie, MovieResponse } from '../interfaces/movie.interface';
 import { MoviesService } from '../services/movies.service';
 
 @Component({
@@ -13,6 +13,10 @@ export class MainPageComponent implements OnInit {
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit(): void {
-    this.movies = this.moviesService.getMovies();
+    this.moviesService
+      .getMoviesFromApi()
+      .subscribe((response: MovieResponse) => {
+        this.movies = response.movies;
+      });
   }
 }
