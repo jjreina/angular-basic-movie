@@ -19,4 +19,8 @@ export class MainPageComponent implements OnInit {
         this.movies = response.movies;
       });
   }
+
+  public removeMovieById(idMovie: string): void {
+    this.movies = this.moviesService.removeMovieById(idMovie, this.movies);
+  }
 }

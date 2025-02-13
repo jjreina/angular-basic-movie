@@ -14,4 +14,8 @@ export class MoviesService {
   public getMoviesFromApi(): Observable<MovieResponse> {
     return this.http.get<MovieResponse>(this.url);
   }
+
+  public removeMovieById(idMovie: string, movies: Movie[]): Movie[] {
+    return movies.filter((movie: Movie) => movie.id !== idMovie);
+  }
 }

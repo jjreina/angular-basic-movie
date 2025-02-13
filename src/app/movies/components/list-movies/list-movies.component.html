@@ -5,6 +5,7 @@
     <movies-components-movie
       [movie]="movie"
       (movieTitleEventEmitter)="showTitleMovieSelected($event)"
+      (movieIdEventEmitter)="emitMovieId($event)"
     ></movies-components-movie>
   }
 </div>

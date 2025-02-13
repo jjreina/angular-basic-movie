@@ -1,3 +1,4 @@
 <movies-components-list-movies
   [movies]="this.movies"
+  (movieIdEventEmitter)="removeMovieById($event)"
 ></movies-components-list-movies>
